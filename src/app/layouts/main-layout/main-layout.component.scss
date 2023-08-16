@@ -1,0 +1,22 @@
+.main-layout {
+    height: 100vh;
+    overflow: hidden;
+    .header {
+        width: 100%;
+        height: 58px;
+        border-bottom: 1px solid #ccc;
+    }
+    .main-content {
+        min-height: calc(100vh - 58px);
+        .sidebar {
+            min-width: 220px;
+            max-width: 220px;
+            height: calc(100vh - 58px);
+        }
+        .content-body {
+            height: calc(100vh - 58px);
+            overflow-y: auto;
+        }
+    }
+    
+}

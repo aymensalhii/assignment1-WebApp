@@ -1,1 +1,13 @@
-<p>main-layout works!</p>
+<div class="main-layout">
+    <div class="header">
+        <app-header></app-header>
+    </div>
+    <div class="main-content d-flex">
+        <div class="sidebar shadow">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="content-body p-1 p-md-4">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,12 @@
-<p>sidebar works!</p>
+<div class="menu-container">
+    <ul>
+        <li *ngFor="let item of items">
+            <a routerLink="{{item.link}}" routerLinkActive="active-link">
+                <span>
+                    <i class="bi {{item.icon}}"></i>
+                    {{item.label}}
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>
