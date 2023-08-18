@@ -1,3 +1,14 @@
+#Run the project locally
+
+1. you need to have angular CLI installed,
+
+2. clone this project and open it ib your prefered editor
+3. run npm install , to install all the used packages
+4. once done, run ng serve -o and it will open the project on port 4200
+
+
+
+
 # WebApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
