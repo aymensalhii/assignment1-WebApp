@@ -1,6 +1,10 @@
 <p-menubar>
     <ng-template pTemplate="start">
-        <button pButton pRipple (click)="collapseSidebar()" type="button" label="" icon="pi pi-bars" class="p-button-text p-button-sm p-button-plain"></button>
+        <button pButton pRipple (click)="collapseSidebar()" type="button" label="" icon="pi pi-bars" class="p-button-text p-button-sm p-button-plain collapse-btn ms-md-3"></button>
+        <span class="p-input-icon-right mb-2 me-2">
+            <i class="pi pi-search"></i>
+            <input type="text" class="p-inputtext-sm mt-2 search-input" pInputText placeholder="Search"/>
+        </span>
     </ng-template>
     <ng-template pTemplate="end">
         <p-dropdown class="me-4" [options]="langs" [(ngModel)]="language" placeholder="Select a language" optionLabel="label" [showClear]="false"></p-dropdown>
