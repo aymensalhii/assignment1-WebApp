@@ -15,12 +15,21 @@
         }
     }
 
-    .search-input {
-        margin-left: 120px;
-        box-shadow: none !important;
+    .search-container {
+        .search-input {
+            margin-left: 120px;
+            box-shadow: none !important;
+        }
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
     }
+    
     .collapse-btn {
         margin-bottom: 9px;
+        @media screen and (max-width: 768px) {
+            margin-bottom: 0;
+        }
     }
     .p-multiselect {
         border: none !important;
