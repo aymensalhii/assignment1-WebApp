@@ -1,0 +1,214 @@
+:host ::ng-deep { 
+    .p-toolbar {
+        background: transparent;
+        padding: 0;
+        border: none;
+
+        .p-toolbar-group-left {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    .chip-container {
+        .chip-elements {
+            width: 100%;
+            .pi {
+                font-size: 11px !important;
+            }
+        }
+        .clear-filter {
+            width: fit-content;
+            button {
+                white-space: nowrap;
+                background: transparent;
+                border-color: #ccc;
+                color: #484848;
+                padding: 3px 12px;
+                font-size: 13px;
+                box-shadow: none !important;
+                &:hover {
+                    background: #f7f8ff;
+                }
+            }
+        }
+    }
+    
+    .custom-chip {
+        border: 1px solid #bbb !important;
+        background: #eee;
+        border-radius: 50px;
+        font-size: 13px;
+    }
+
+    .p-multiselect {
+        border: none;
+        margin-right: 12px;
+        font-size: 14px;
+        box-shadow: none !important;
+        .p-icon-wrapper {
+            color: #151515;
+        }
+        .p-multiselect-label {
+            padding-right: 0;
+        }
+        .p-multiselect-trigger {
+            padding-left: 8px;
+            padding-right: 12px;
+            width: 32px;
+        }
+    }
+    .p-multiselect-label {
+        font-weight: bold;
+        color: #151515 !important;
+        padding: 0.57rem 0.57rem;
+    }
+    .p-multiselect-open {
+        background: rgba(0, 0, 0, .08) !important;
+
+        chevrondownicon {
+            transition: .4s;
+            transform: rotate(180deg) !important;
+        }
+    }
+
+    .p-multiselect-panel {
+        .p-multiselect-items-wrapper {
+            max-height: auto !important;
+            max-height: 100% !important;
+            min-width: 280px;
+
+            .p-multiselect-item {
+                box-shadow: none !important;
+                background: #fff !important;
+                .p-checkbox {
+                    .p-highlight {
+                        background: orangered;
+                        border-color: orangered;
+                    }
+                }
+            }
+        }
+    }
+
+    .p-datatable-thead {
+        font-size: 12px;
+        font-weight: 100 !important;
+        color: #888 !important;
+        tr {
+        }
+        th {
+            background: transparent !important;
+            padding-top: 4px !important;
+            padding-bottom: 4px !important;
+            font-weight: 300;
+        }
+        th:nth-child(1) {
+            padding-left: 64px !important;
+        }
+    }
+    .p-datatable-tbody {
+        border-radius: 12px !important;
+        padding: 12px !important;
+        overflow: hidden !important;
+        background: transparent !important;
+        border: 1px solid #ccc !important;
+
+        tr:first-child {
+            border-radius: 12px 12px 0 0 !important;
+            overflow: hidden;
+            td:first-child {
+                border-radius: 12px 0 0 0;
+            }
+        }
+    }
+    .users-table-row {
+        font-size: 13px;
+        font-weight: 400;
+        .user-avatar {
+            display: flex;
+            .avatar-box {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                margin-right: 12px;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        .label,
+        .label-sm {
+            color: #7e7e7e;
+        }
+        .label {
+            font-size: 14px;
+        }
+    }
+
+    .p-paginator {
+        button {
+            width: 32px !important;
+            min-width: 32px !important;
+            height: 32px !important;
+            padding: 0 !important;
+        }
+        .p-paginator-current {
+            margin-right: auto !important;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .p-paginator-rpp-options {
+            margin-left: auto !important;
+            border: none;
+            box-shadow: none !important;
+            font-size: 13px !important;
+            font-weight: 400;
+            height: 32px !important;
+
+            .p-dropdown-label {
+                color: orangered;
+                line-height: 28px;
+                padding: 0;
+                font-weight: 500;
+            }
+            .p-dropdown-trigger {
+                width: 22px;
+                color: orangered;
+            }
+        }
+    
+        .p-paginator-last,
+        .p-paginator-first {
+            display: none;
+        }
+        .p-paginator-next,
+        .p-paginator-prev {
+            border: 1px solid #ccc !important;
+            border-radius: 5px !important;
+        }
+        .p-disabled {
+            border-color: #ddd !important;
+            color: #ddd !important;
+        }
+        .p-paginator-next {
+            margin-right: auto !important;
+        }
+    
+        .p-paginator-pages {
+            .p-paginator-page {
+                display: none;
+            }
+            .p-highlight {
+                display: block !important;
+                text-align: center;
+                background: orangered !important;
+                color: #fff !important;
+                border-radius: 5px !important;
+            }
+        }
+    }
+}

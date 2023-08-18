@@ -1,1 +1,102 @@
-<p>user-item works!</p>
+<p-toolbar>
+    <div class="p-toolbar-group-left">
+        <button pButton label="" routerLink="/users" icon="pi pi-arrow-left" class="p-button-sm back-btn me-1"></button>
+        <div class="breadcrumb">
+            <p class="m-0"><span class="text-muted">Users</span> / <strong> {{user?.fullname}}</strong></p>
+        </div>
+    </div>
+    
+    <div class="p-toolbar-group-right">
+    </div>
+</p-toolbar>
+
+<div class="row mx-0 col-12 mt-4">
+    <div class="col-lg-7 p-1 left-col">
+        <p-tabView>
+            <p-tabPanel header="Details">
+                <div class="py-3">
+                    <h6 class="label-title">Nickname</h6>
+                    <p class="label">
+                        {{user?.nickname}}
+                    </p>
+                    <hr class="my-4">
+                    <h6 class="label-title">About User</h6>
+                    <p class="label">{{user?.about}}</p>
+                    <hr class="my-4">
+                    <h6 class="label-title">Location</h6>
+                    <p class="label">{{user?.location.city}}, {{user?.location.country}}</p>
+                    <hr class="my-4">
+                    <h6 class="label-title">Writing Topics</h6>
+                    <div class="flex align-items-center">
+                        <p-chip class="me-2" label="{{topic}}" *ngFor="let topic of user?.writingTopics" styleClass="custom-chip"></p-chip>
+                    </div>
+                    <!--<p class="label"><span class="me-2" *ngFor="let topic of user?.writingTopics">{{topic}}</span> </p>-->
+                </div>
+            </p-tabPanel>
+            <p-tabPanel header="Manage Account">
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                    architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                    voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.</p>
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+
+    <div class="col-lg-5 p-1 right-col">
+        <div class="card border-0">
+            <div class="card-body">
+                <div class="avatar" [style]="{'background': user?.status.color+'22'}">
+                    <img [src]="user?.avatar" alt="" *ngIf="user?.avatar !== null">
+                    <div class="caracters-box caracters-box-lg" *ngIf="user?.avatar === null"><strong>{{dataService.extractFirstCharacters(user?.fullname)!}}</strong></div>
+                </div>
+                <div class="d-flex mb-0 mt-3">
+                    <h4 class="name-label my-0 me-3">{{user?.fullname}}</h4> 
+                    <span class="status-badge" [style]="{'background': user?.status.color+'22', 'color': user?.status.color}">{{user?.status.label}}</span>
+                </div>
+                <p class="nickname">{{user?.nickname}}</p>
+
+                <div class="publications-row">
+                    <div class="pub-item"><strong>{{user?.personalPublication}}</strong> Personal Publication</div>
+                    <div class="pub-item"><strong>{{user?.publisherPublication}}</strong> Publisher Publication</div>
+                </div>
+
+                <div class="mb-3">
+                    <h6 class="label-title mt-4">User Type</h6>
+                    <div class="label-box">
+                        <div class="role-box-icon">
+                            <img src="assets/icons/lamp.svg" alt="">
+                        </div>
+                        <span class="label px-2 py-1 me-2 border" *ngFor="let role of user?.roles">{{role}}</span>
+                    </div>
+                </div>
+
+                <div class="mb-3" *ngIf="user?.Publisher">
+                    <h6 class="label-title mt-4">Publishers</h6>
+                    <div class="label-box radius-52">
+                        <div class="logo">
+                            <img src="{{user?.Publisher?.logo}}" alt="">
+                        </div>
+                        <div class="publisher-label">
+                            <p class="label"><strong>{{user?.Publisher?.name}}</strong></p>
+                            <span class="label">{{user?.Publisher?.email}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <h6 class="label-title mt-4">Email</h6>
+                    <p class="label">{{user?.email}}</p>
+                </div>
+
+                <div class="mb-3">
+                    <h6 class="label-title mt-4">Registration Date</h6>
+                    <p class="label">{{user?.RegistrationDate | date: 'dd.MM.YYYY'}}</p>
+                </div>
+
+                <div class="mb-3">
+                    <h6 class="label-title mt-4">Last Activity</h6>
+                    <p class="label">{{user?.lastLogin | date: 'dd.MM.YYYY, HH:mm'}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

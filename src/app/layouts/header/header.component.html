@@ -1,8 +1,27 @@
-<p-menubar [model]="items">
+<p-menubar>
     <ng-template pTemplate="start">
-        HH
+        <button pButton pRipple (click)="collapseSidebar()" type="button" label="" icon="pi pi-bars" class="p-button-text p-button-sm p-button-plain"></button>
     </ng-template>
     <ng-template pTemplate="end">
-        <input type="text" class="p-inputtext-sm" pInputText placeholder="Search">
+        <p-dropdown class="me-4" [options]="langs" [(ngModel)]="language" placeholder="Select a language" optionLabel="label" [showClear]="false"></p-dropdown>
+
+        <p-multiSelect [options]="Options"  [displaySelectedLabel]="false" [showHeader]="false" defaultLabel="Role" defaultLabel="Select a Country" optionLabel="name" class="multiselect-custom mb-2">
+            <ng-template let-value pTemplate="selectedItems">
+                <div class="d-flex">
+                    <div class="avatar">
+                        <img src="{{currentUser.avatar}}" alt="">
+                    </div>
+                    <div class="name-box">
+                        <p class="m-0">{{currentUser.name}}</p>
+                        <span>{{currentUser.role}}</span>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template let-option pTemplate="item">
+                <div class="country-item">
+                    <a class="link" routerLink="/{{option.link}}">{{option.label}}</a>
+                </div>
+            </ng-template>
+        </p-multiSelect>
     </ng-template>
 </p-menubar>

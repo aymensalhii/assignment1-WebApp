@@ -3,10 +3,10 @@
         <app-header></app-header>
     </div>
     <div class="main-content d-flex">
-        <div class="sidebar shadow">
+        <div class="sidebar shadow" [ngClass]="{'collapsed': collapsed}">
             <app-sidebar></app-sidebar>
         </div>
-        <div class="content-body p-1 p-md-4">
+        <div class="content-body col p-1 p-md-4" [ngClass]="{'uncollapsed': collapsed}">
             <router-outlet></router-outlet>
         </div>
     </div>

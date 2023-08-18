@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { UserItemRoutingModule } from './user-item-routing.module';
 import { UserItemComponent } from './user-item.component';
-
+import { PrimengModule } from 'src/app/shared/modules/primeng.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,8 @@ import { UserItemComponent } from './user-item.component';
   ],
   imports: [
     CommonModule,
-    UserItemRoutingModule
+    UserItemRoutingModule,
+    PrimengModule
   ]
 })
 export class UserItemModule { }
